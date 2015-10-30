@@ -1,0 +1,117 @@
+package livro2;
+import java.util.Scanner;
+public class Ordenacao {
+
+	int i;
+	int vet[], aux,n,opc;
+	
+	
+	//Menu de opções//
+	public void menu(){
+		
+		System.out.println("1 - Ordenação Crescente");
+		System.out.println("2 - Ordenação Decrescente");
+		System.out.println("0 - Sair");
+	}
+	
+	//Escolha da opção//
+	public void opcao(){
+				
+		Scanner sc = new Scanner(System.in);
+		do{
+		menu();
+		opc = sc.nextInt();
+		
+		switch(opc){
+		
+		case 1: entradaC();
+		break;
+		
+		case 2: entradaD();
+		break;
+		
+		default: System.out.println("Opção Inválida!\nPrograma Encerrado!");
+		break;
+		}
+		
+		}while(opc==2);
+		
+	}
+	
+	//entrada de dados desordenados//
+	public void entradaC(){
+		
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Entre com a quantidade desejada de elementos: ");
+		n = sc.nextInt();
+		
+		vet = new int [n];
+		
+		System.out.println("Entre com os elementos do vetor: ");
+		
+		for (i=0;i<n;i++){
+			vet[i] = sc.nextInt();
+		}
+		System.out.println(" ");
+		crescente();
+		sc.close();
+		
+	}
+		//ordena o vetor
+		public void crescente(){
+			
+			for (i=0;i<n;i++){
+				for (int j=0;j<n-1;j++){
+					if (vet[j]>vet[j+1]){
+						
+						aux= vet[j];
+						vet[j] = vet[j+1];
+						vet[j+1] = aux;
+					}
+				}
+			}
+				//mostra ordenado//
+				for (i=0;i<n;i++){
+				System.out.println("Seu vetor ordenado: "+vet[i]);
+			}
+		}
+		
+		//entrada para decrescer//
+		public void entradaD(){
+			
+			Scanner sc = new Scanner (System.in);
+			
+			System.out.println("Entre com a quantidade desejada de elementos: ");
+			n = sc.nextInt();
+			
+			vet = new int [n];
+			
+			System.out.println("Entre com os elementos do vetor: ");
+			
+			for (i=0;i<n;i++){
+				vet[i] = sc.nextInt();
+			}
+			System.out.println(" ");
+			decrescente();
+			sc.close();
+		}
+			//ordena em ordem decrescente
+		public void decrescente(){
+			
+			for (i=0;i<n;i++){
+				for (int j=0;j<n-1;j++){
+					if (vet[j]<vet[j+1]){
+			
+						aux= vet[j];
+						vet[j] = vet[j+1];
+						vet[j+1] = aux;
+					}
+				}
+			}
+				//mostra ordenado//
+				for (i=0;i<n;i++){
+				System.out.println("Seu vetor ordenado: "+vet[i]);
+			}
+		}
+	}
