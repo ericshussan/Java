@@ -1,0 +1,48 @@
+package livro;
+import java.util.Scanner;
+public class Altura {
+	
+	public static void main(String[] args) {
+	
+		Entrada in = new Entrada();
+		in.entrada();
+	}
+		
+}
+
+//entrada de dados//
+		public class Entrada{
+			
+			double altura=0;
+			int i, aluno;
+		
+		public void entrada(){
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Entre com a quantidade de alunos: ");
+		aluno = sc.nextInt();
+		
+		System.out.println("Entre com a altura: ");
+		for (i=0;i<aluno;i++){
+			altura = sc.nextDouble();
+		}
+		teste();
+		sc.close();
+		}
+		
+		//teste da condição//
+		public void teste(){
+		if (altura < 1.50){
+			System.out.println("Quantidade de alunos com menos de 1.55m de altura: " +aluno);
+		}
+		else if ((altura>1.50)&&(altura<1.70)){
+			System.out.println("Quantidade de alunos com  até 1.70m de altura: " +aluno);	
+			}
+		else if ((altura>1.70)&&(altura<1.80)) {
+			System.out.println("Quantidade de alunos com mais de 1.70m e menos que 1.80m: " +aluno);
+				}
+		else {
+			System.out.println("Altura excede 1.80m!");
+		}
+		
+		}
+	}
