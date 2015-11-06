@@ -1,0 +1,38 @@
+public class VelMedia {
+
+		Scanner sc = new Scanner(System.in);
+		
+		double dS=0, dT=0, tI, tF, pI, pF, vM=0;
+		
+		//calculo do delta S//
+		public void deltaS(){
+			
+			System.out.println("Entre com a posição inicial: ");
+			pI = sc.nextDouble();
+			System.out.println("Entre com a posição final: ");
+			pF = sc.nextDouble();
+			dS = pF - pI;
+		}
+		
+		//calculo do delta T//
+		public void deltaT(){
+			
+			System.out.println("Entre com o tempo inicial: ");
+			tI = sc.nextDouble();
+			System.out.println("Entre com o tempo final: ");
+			tF = sc.nextDouble();
+			dT = tF - tI;
+		}
+		
+		public void velocidade(){
+		//calculo da velocidade media//
+			
+			deltaS();
+			deltaT();
+			
+			vM = dS/dT;
+			//mostra o resultado em Km/h e M/s//
+			System.out.println ("\nVelocidade Média: " +vM+ " Km/h");
+			System.out.printf ("Velocidade Média: "+vM/3.6+ " M/s");
+		}
+	}
