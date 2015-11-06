@@ -1,0 +1,49 @@
+public class TrabalhoF {
+
+	public static void main(String[] args) {
+		
+		Trabalho t = new Trabalho();
+		
+		t.trabalho();
+
+	}
+
+}
+
+public class Trabalho {
+
+	Scanner sc = new Scanner(System.in);
+	
+	double t, f = 0, m, a, deltaS;
+	
+	//calculo do deslocamento (Massa * Velocidade de deslocamento por segundo)
+	public void deslocamento(){
+		
+		System.out.println("Entre com a massa: ");
+		m = sc.nextDouble();
+		
+		System.out.println("Entre com a aceleração: ");
+		a = sc.nextDouble();
+		
+		f = m*a;
+		
+		System.out.println("Seu deslocamento é de: " +f+ "F");
+		
+	}
+	
+	public void dS(){
+		//Metodo de entrada da distância à ser percorrida em metros//
+		System.out.println("Entre com a distância do deslocamento em metros: ");
+		deltaS = sc.nextDouble();		
+	}
+	public void trabalho(){
+		//calculo do trabalho (T = F*Delta S)//
+		deslocamento();
+		dS();
+		
+		t = f*deltaS;
+		
+		System.out.println("Sua força é: " +t+ "J");
+		
+	}
+}
