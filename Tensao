@@ -1,0 +1,27 @@
+public class Tensao {
+	
+	double U = 0, Eel, Q;
+	
+	public void entrada(){
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Entre com o valor da energia elétrica: ");
+		Eel = sc.nextDouble();
+		
+		System.out.println("Entre com o valor da quantidade de carga eletrizada: ");
+		Q = sc.nextDouble();
+		
+		sc.close();
+	}
+
+	public void calculo(){
+		entrada();
+		U = Eel/Q;
+		mostra();
+	}
+	
+	public void mostra(){
+		System.out.println("Sua tensão elétrica é de: " +U);
+	}
+}
