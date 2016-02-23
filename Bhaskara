@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Bhaskara
+{
+        public void entrada() {
+       Scanner sc = new Scanner (System.in);
+       Funcao f = new Funcao();
+       
+       double a, b, c, delta=0, raiz, x1=0, x2=0;
+       
+       System.out.println ("Entre com o valor de a: ");
+       a = sc.nextFloat();
+             
+       System.out.println("Entre com o valor de b: ");
+       b = sc.nextFloat();
+       
+       System.out.println("Entre com o valor de c: ");
+       c = sc.nextFloat();
+             
+       delta = f.delta(a,b,c);  
+       
+       System.out.println("Delta = " +delta);
+       System.out.println("");
+      
+       if (delta > 0){
+       System.out.println("Raiz 1 = "+f.x1(a,b,delta));
+       System.out.println("");
+       
+       System.out.println("Raiz 2 = "+f.x2(a,b,delta));
+       System.out.println("");
+    }
+       else{
+       System.out.println("Não existe Raíz de número negativo!");
+    }
+       
+    }
+   
+}
+
+//Fórmula de Bhaskara//
+
+//public double delta (double a, double b, double c){
+        return Math.pow(b,2) - (4*a*c);
+    }
+    
+    //public double x1 (double a, double b, double delta){
+        return (-b + Math.sqrt(delta))/(2*a);
+    }
+    
+    //public double x2 (double a, double b, double delta){
+        return (-b - Math.sqrt(delta))/(2*a);
+    }
+    
