@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Interpolacao
+{
+   public static void main (String []args){
+       
+       Scanner sc = new Scanner(System.in);
+       Funcao f = new Funcao();
+       
+       double a=0,b=0,x1,x2,y1,y2, res=0;
+       final double x = 15;
+       
+       System.out.println("Entre com os valores de x1 e x2: ");
+       x1 = sc.nextDouble();
+       x2 = sc.nextDouble();
+       
+       System.out.println("Entre com os valores de y1 e y2: ");
+       y1 = sc.nextDouble();
+       y2 = sc.nextDouble();
+      
+       System.out.println("");
+       
+       res = f.inter(x1,x2,y1,y2,x);
+       System.out.println("Resultado: "+res);
+       
+       //Função da Interpolação: 
+       //public double inter (double x1, double x2, double y1, double y2,double x){
+       // return y1+(x-x1)*((y2-y1)/(x2-x1));
+    }
+    }
