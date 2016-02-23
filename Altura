@@ -1,48 +1,42 @@
-package livro;
 import java.util.Scanner;
-public class Altura {
-	
-	public static void main(String[] args) {
-	
-		Entrada in = new Entrada();
-		in.entrada();
-	}
-		
+public class Altura
+{
+ public static void main (String[]args){
+     
+     Scanner sc = new Scanner (System.in);
+     
+     float altura=0, mediaAltura=0;
+     int n, baixo=0,medio=0,alto=0;
+     
+     System.out.println("Entre com a quantidade de alunos: ");
+     n = sc.nextInt();
+     
+     for (int i=1;i<n+1;i++){
+         
+         System.out.println("Entre com a altura do "+i+"º aluno: ");
+         altura = sc.nextFloat();
+         
+         mediaAltura = mediaAltura+altura;
+              
+        if (altura < 1.50){
+        
+            baixo = baixo+1;
+    }
+        else if((altura > 1.50) && (altura < 1.80)){
+        medio = medio+1;
+    }
+        
+        else if(altura > 1.80){
+        alto = alto +1;
+    }
 }
-
-//entrada de dados//
-		public class Entrada{
-			
-			double altura=0;
-			int i, aluno;
-		
-		public void entrada(){
-		Scanner sc = new Scanner (System.in);
-		System.out.println("Entre com a quantidade de alunos: ");
-		aluno = sc.nextInt();
-		
-		System.out.println("Entre com a altura: ");
-		for (i=0;i<aluno;i++){
-			altura = sc.nextDouble();
-		}
-		teste();
-		sc.close();
-		}
-		
-		//teste da condição//
-		public void teste(){
-		if (altura < 1.50){
-			System.out.println("Quantidade de alunos com menos de 1.55m de altura: " +aluno);
-		}
-		else if ((altura>1.50)&&(altura<1.70)){
-			System.out.println("Quantidade de alunos com  até 1.70m de altura: " +aluno);	
-			}
-		else if ((altura>1.70)&&(altura<1.80)) {
-			System.out.println("Quantidade de alunos com mais de 1.70m e menos que 1.80m: " +aluno);
-				}
-		else {
-			System.out.println("Altura excede 1.80m!");
-		}
-		
-		}
-	}
+    
+        mediaAltura = mediaAltura/n;
+    
+        System.out.println("Alunos baixos: "+baixo);
+        System.out.println("Alunos médios: "+medio);
+        System.out.println("Alunos altos: "+alto);
+        System.out.println("Média de altura: "+mediaAltura);
+     
+    }
+}
